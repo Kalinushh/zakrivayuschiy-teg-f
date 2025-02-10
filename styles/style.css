@@ -86,7 +86,7 @@
 }
 
 .hue-rotate {
-  filter: hue-rotate(-90deg);
+  filter: hue-rotate(90deg) blur(1px);
 }
 
 .sepia {
@@ -98,11 +98,12 @@
 }
 
 .opacity {
-  filter: opacity(40%);
+  filter: opacity(110%);
 }
 
 .images__decorated {
   position: absolute;
+  z-index: 3;
   right: 23px;
   top: 23px;
   font-family: var(--font-accent), "Arial", sans-serif;
@@ -125,7 +126,7 @@
   max-width: 100%;
   max-block-size: 696px;
   object-fit: cover;
-  filter: contrast(50%);
+  filter: contrast(90%);
 }
 
 .paragraph {
