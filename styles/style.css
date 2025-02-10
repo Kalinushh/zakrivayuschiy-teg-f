@@ -97,6 +97,10 @@
   filter: invert(100%);
 }
 
+.opacity {
+  filter: opacity(40%);
+}
+
 .images__decorated {
   position: absolute;
   right: 23px;
