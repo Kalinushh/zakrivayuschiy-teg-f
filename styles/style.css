@@ -70,35 +70,35 @@
 }
 
 .brightness {
-  filter: brightness(200%);
+  filter: brightness(200%) contrast(90%);
 }
 
 .blur {
-  filter: blur(3px);
+  filter: blur(3px) contrast(90%);
 }
 
 .grayscale {
-  filter: grayscale(0.2);
+  filter: grayscale(0.2) contrast(90%);
 }
 
 .saturate {
-  filter: saturate(158%);
+  filter: saturate(158%) contrast(90%);
 }
 
 .hue-rotate {
-  filter: hue-rotate(90deg) blur(1px);
+  filter: hue-rotate(90deg) blur(1px) contrast(90%);
 }
 
 .sepia {
-  filter: sepia(80%);
+  filter: sepia(80%) contrast(90%);
 }
 
 .invert {
-  filter: invert(100%);
+  filter: invert(100%) contrast(90%);
 }
 
 .opacity {
-  filter: opacity(110%);
+  filter: opacity(110%) contrast(90%);
 }
 
 .images__decorated {
@@ -126,7 +126,6 @@
   max-width: 100%;
   max-block-size: 696px;
   object-fit: cover;
-  filter: contrast(90%);
 }
 
 .paragraph {
