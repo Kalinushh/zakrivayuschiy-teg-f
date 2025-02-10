@@ -97,6 +97,10 @@
   filter: sepia(80%);
 }
 
+.invert {
+  filter: invert(100%);
+}
+
 .images__decorated {
   position: absolute;
   right: 23px;
@@ -235,7 +239,7 @@
   inline-size: 39px;
 }
 
-.card__icon-button{
+.card__icon-button {
   block-size: 39px;
   border: none;
   background-color: transparent;
@@ -263,7 +267,7 @@
 }
 
 .card__icon-button:hover .core {
-  fill: var(--contour-heart, rgba(0, 0, 0, 1));  
+  fill: var(--contour-heart, rgba(0, 0, 0, 1));
 }
 
 .card__icon-button:active .main-body {
@@ -274,7 +278,7 @@
   fill: var(--heart, rgba(255, 0, 0, 1));
 }
 
-.is-liked .heart{
+.is-liked .heart {
   animation: is-liked 0.3s ease-in 0.1s forwards;
 }
 
