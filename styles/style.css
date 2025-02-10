@@ -73,10 +73,6 @@
   filter: brightness(200%);
 }
 
-.contrast {
-  filter: contrast(50%);
-}
-
 .blur {
   filter: blur(3px);
 }
@@ -125,6 +121,7 @@
   max-width: 100%;
   max-block-size: 696px;
   object-fit: cover;
+  filter: contrast(50%);
 }
 
 .paragraph {
