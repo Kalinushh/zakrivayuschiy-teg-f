@@ -33,7 +33,6 @@
   font-family: var(--font-accent), "Arial", sans-serif;
   text-transform: uppercase;
   border: 2px solid var(--color-main, rgba(0, 0, 0, 1));
-  min-inline-size: 371px;
   background-color: var(--background-color, rgba(255, 255, 255, 1));
   
 }
@@ -48,25 +47,29 @@
   font-size: clamp(0.875rem, 0.6798rem + 0.8419vw, 1.4375rem);
 }
 
-.section {
+.main {
+  display: flex;
+  row-gap: 50px;
+  flex-direction: column;
+  align-items: center;
+}
+
+.article {
   border: 2px solid var(--color-main, rgba(0, 0, 0, 1));
-  margin-bottom: 51px;
-  min-inline-size: 371px;
   background-color: var(--background-color, rgba(255, 255, 255, 1));
 }
 
-.title__section {
+.title__article {
   font-family: var(--font-main), "Arial", sans-serif;
   font-size: var(--font-size-main, 18px);
   font-weight: var(--font-max-weght);
-  padding: 3px 10px;
-  min-block-size: 33px;
-  border: 2px solid var(--color-main, rgba(0, 0, 0, 1))
+  padding: 6px 10px;
 }
 
 .figure {
   margin: 0;
   position: relative;
+  border: 2px solid var(--color-main, rgba(0, 0, 0, 1));
 }
 
 .brightness {
@@ -137,7 +140,6 @@
 
 .button:focus-visible {
   box-shadow: 2px 2px var(--color-main, rgba(0, 0, 0, 1));
-  transition: 0.3s ease;
 }
 
 .button__list {
@@ -147,12 +149,13 @@
 }
 
 .button {
-  background-color: var(--background-color, rgba(255, 255, 255, 1));
+  background-color:  var(--background-color, rgba(255, 255, 255, 1));
   border: 2px solid var(--color-main, rgba(0, 0, 0, 1));
   cursor: pointer;
   outline: none;
   overflow: hidden;
   position: relative;
+  transition: 0.3s ease;
 }
 
 .button::after {
@@ -174,18 +177,17 @@
 
 .button:hover .button__text {
   color: var(--background-color, rgba(255, 255, 255, 1));
-  mix-blend-mode: difference;
-  
 }
 
 .button__text {
   position: relative;
   font-family: var(--font-accent), "Arial", sans-serif;
   font-size: var(--font-size-button, 14px);
-  color: var(--color-main, rgba(0, 0, 0, 1));
+  color: var(--background-color, rgba(255, 255, 255, 1));
   line-height: 21px;
   z-index: 2;
   transition: color 0.5s ease-in-out;
+  mix-blend-mode: difference;
 }
 
 .card__like-button {
@@ -203,7 +205,7 @@
 .button__save {
   block-size: 51px;
   inline-size: 335px;
-  margin: 0 clamp(10px, 50%, 180px);
+  margin-inline: auto;
 }
 
 .button__dialog {
@@ -217,6 +219,8 @@
   block-size: 21px;
   inline-size: 21px;
   z-index: 2;
+  mix-blend-mode: difference;
+  stroke: var(--background-color, rgba(255, 255, 255, 1))
 }
 
 .button:hover .floppy__icon {
@@ -235,16 +239,25 @@
   gap: 20px;
 }
 
+.dialog-p {
+  max-inline-size: 234px;
+}
+
 .dialog__floppy {
   block-size: 39px;
   inline-size: 39px;
 }
 
 .card__icon-button {
-  block-size: 39px;
+  block-size: 37px;
   border: none;
   background-color: transparent;
   cursor: pointer;
+  outline: transparent;
+  margin-right: 7px;
+  padding: 0;
+  display: flex;
+  align-items: center;
 }
 
 .sparks {
@@ -254,29 +267,33 @@
 .contour {
   transition: color 0.1s linear;
 }
+
 .main-body {
-  transition: fill 0.3s 0.03s linear;
+  transition: fill 0.3s linear;
 }
 
 .core {
-  transition: fill 0.3s;
+  transition: fill 0.3s 0.03s linear;
 }
 
 .card__icon-button:hover .main-body {
   fill: var(--contour-heart, rgba(0, 0, 0, 1));
-  transition: fill 0.3s linear;
+  transition: fill 0.3s 0.05s linear;
 }
 
 .card__icon-button:hover .core {
   fill: var(--contour-heart, rgba(0, 0, 0, 1));
+  transition: fill 0.3s linear;
 }
 
 .card__icon-button:active .main-body {
   fill: var(--heart, rgba(255, 0, 0, 1));
+  transition: fill 0.3s 0.05s linear;
 }
 
 .card__icon-button:active .core {
   fill: var(--heart, rgba(255, 0, 0, 1));
+  transition: fill 0.3s linear;
 }
 
 .is-liked .heart {
@@ -285,6 +302,10 @@
 
 .is-liked .sparks {
   animation: sparks 0.3s ease-in 0.3s forwards;
+}
+
+.like-icon {
+  display: flex;
 }
 
 .like-icon.is-liked .contour {
@@ -299,11 +320,11 @@
 
 .like-icon.is-liked .core {
   fill: var(--heart, rgba(255, 0, 0, 1));
-  transition: color 0.3s 0.05s linear;
+  transition: color 0.3s linear;
 }
 
 .dialog[open]::backdrop {
-  backdrop-filter: brightness(30%);
+  background-color: rgba(0, 0, 0, 0.75);
 }
 
 
@@ -319,6 +340,7 @@
 
   .figure {
     min-block-size: 371px;
+    border: none;
   }
   
   .images__content {
@@ -342,5 +364,10 @@
 
   .button__dialog {
     inline-size: 257px;
+  }
+
+  .images__decorated {
+    right: 0;
+    top: 20px;
   }
 }
