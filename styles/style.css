@@ -24,6 +24,7 @@
   background-image: var(--background-image);
   background-size: cover;
   background-attachment: fixed;
+  font-variation-settings: "wght" var(--font-min-weght, 400);
 }
 
 .header {
@@ -45,7 +46,7 @@
   font-size: clamp(3.0625rem, 2.7154rem + 1.4967vw, 4.0625rem);
   font-weight: 400;
   padding-bottom: clamp(10px, 5vw, 20px);
-  font-variation-settings: "wght" var(--font-max-weght, 700);
+  
 }
 
 .header__paragraph {
@@ -67,8 +68,8 @@
 .title__article {
   font-family: var(--font-main), "Arial", sans-serif;
   font-size: var(--font-size-main, 18px);
-  font-weight: var(--font-max-weght, 700);
   padding: 6px 10px;
+  font-variation-settings: "wght" var(--font-max-weght, 700);
 }
 
 .figure {
